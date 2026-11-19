@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreshFold Laundry Shop</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>FreshFold Laundry</h1><p>Laundry Shop Management System - Nairobi</p></header>
+<main>
+<section class="cards">
+  <div class="card"><span>Total Orders</span><strong id="total">0</strong></div>
+  <div class="card"><span>Today's Income</span><strong id="income">KES 0</strong></div>
+  <div class="card"><span>Ready for Pickup</span><strong id="ready">0</strong></div>
+</section>
+<section class="grid">
+  <form id="orderForm" class="panel">
+    <h2>+ New Order</h2>
+    <label>Customer Name <input name="customer" required placeholder="e.g. Mary Wanjiru"></label>
+    <label>Phone <input name="phone" required placeholder="0712 345 678"></label>
+    <label>Service <select name="service"><option>Wash &amp; Fold</option><option>Wash &amp; Iron</option><option>Dry Cleaning</option></select></label>
+    <label>Weight (kg) <input name="kilos" type="number" min="1" value="3" required></label>
+    <label>Status <select name="status"><option>Received</option><option>Washing</option><option>Ironing</option><option>Ready</option><option>Delivered</option></select></label>
+    <p class="hint">Prices: Wash &amp; Fold KES 150/kg - Wash &amp; Iron KES 200/kg - Dry Cleaning KES 250/kg<br>Change prices in src/Main.java - addOrder()</p>
+    <button type="submit">Save Order</button>
+  </form>
+  <div class="panel">
+    <h2>Search Orders</h2>
+    <input id="search" placeholder="Search by name or phone..." oninput="render()">
+    <p class="hint">Tip: Change an order status using the dropdown in the table. Data saves automatically to orders.txt</p>
+  </div>
+</section>
+<section class="panel"><h2>All Orders</h2>
+<table><thead><tr><th>#</th><th>Customer</th><th>Phone</th><th>Service</th><th>Kg</th><th>Price</th><th>Status</th><th>Date</th><th>Action</th></tr></thead><tbody id="tbody"></tbody></table>
+</section>
+</main>
+<footer><p>Made with Java + HTML + CSS - Data saved in orders.txt</p></footer>
+<script src="app.js"></script>
+</body></html>
